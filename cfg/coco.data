@@ -1,0 +1,5 @@
+train  = coco_train_label_person.txt
+valid  = coco_test_label_person.txt
+names = data/coco.names
+backup = backup
+gpus  = 0
