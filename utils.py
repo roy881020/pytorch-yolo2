@@ -9,6 +9,7 @@ from torch.autograd import Variable
 
 import struct # get_image_size
 import imghdr # get_image_size
+import pdb
 
 def sigmoid(x):
     return 1.0/(math.exp(-x)+1.)
@@ -393,8 +394,9 @@ def file_lines(thefilepath):
         buffer = thefile.read(8192*1024)
         if not buffer:
             break
-        count += buffer.count('\n')
+        count += buffer.count(b'\n')
     thefile.close( )
+    #pdb.set_trace()
     return count
 
 def get_image_size(fname):

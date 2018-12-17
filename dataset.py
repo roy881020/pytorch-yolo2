@@ -10,6 +10,7 @@ from PIL import Image
 from utils import read_truths_args, read_truths
 from image import *
 
+
 class listDataset(Dataset):
 
     def __init__(self, root, shape=None, shuffle=True, transform=None, target_transform=None, train=False, seen=0, batch_size=64, num_workers=4):
