@@ -141,7 +141,7 @@ def train(epoch):
                        batch_size=batch_size,
                        num_workers=num_workers),
         batch_size=batch_size, shuffle=False, **kwargs)
-    pdb.set_trace()
+#    pdb.set_trace()
 
     lr = adjust_learning_rate(optimizer, processed_batches)
     logging('epoch %d, processed %d samples, lr %f' % (epoch, epoch * len(train_loader.dataset), lr))
@@ -163,9 +163,11 @@ def train(epoch):
         t4 = time.time()
         optimizer.zero_grad()
         t5 = time.time()
+#	pdb.set_trace()
         output = model(data)
         t6 = time.time()
         region_loss.seen = region_loss.seen + data.data.size(0)
+#	pdb.set_trace()
         loss = region_loss(output, target)
         t7 = time.time()
         loss.backward()
